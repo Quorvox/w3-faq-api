@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — вопросы и ответы</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>частые вопросы</h1>
+    <p id="src">гружу базу…</p>
+  </header>
+
+  <section class="card">
+    <input id="q" placeholder="поиск по вопросам…">
+    <div id="cats" class="cats">
+      <button data-c="all" class="on">все</button>
+      <button data-c="оплата">оплата</button>
+      <button data-c="доставка">доставка</button>
+      <button data-c="аккаунт">аккаунт</button>
+    </div>
+    <div id="list"></div>
+  </section>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

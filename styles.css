@@ -1,0 +1,38 @@
+/* темная тема */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#0d1117;color:#e6edf3}
+.wrap{max-width:700px;margin:0 auto;padding:32px 16px 60px}
+header{text-align:center;margin-bottom:20px}
+header h1{font-size:26px}
+header p{opacity:.6;font-size:14px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:20px}
+#q{width:100%;background:#0d1117;border:1px solid #30363d;color:#e6edf3;border-radius:8px;padding:12px;font-size:15px;margin-bottom:12px}
+#q:focus{outline:none;border-color:#58a6ff}
+.cats{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.cats button{background:#21262d;color:#e6edf3;border:0;border-radius:8px;padding:8px 14px;font-size:13px;cursor:pointer}
+.cats button.on{background:#1f6feb}
+/* аккордеон: вопрос отдельным блоком, ответ — врезка */
+.acc{border:1px solid #30363d;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .25s,transform .25s;animation:pop .3s ease backwards;animation-delay:calc(var(--i,0)*30ms)}
+.acc:hover{transform:translateY(-2px);border-color:#58a6ff66}
+.acc.open{border-color:#1f6feb99;box-shadow:0 6px 24px #1f6feb22}
+.acc > button{width:100%;background:#0d1117;color:#e6edf3;border:0;text-align:left;padding:14px;font-size:15px;cursor:pointer;display:flex;gap:12px;align-items:center}
+.acc .n{width:28px;height:28px;flex:none;border-radius:8px;background:#1f6feb22;color:#79c0ff;display:grid;place-items:center;font-size:12px;font-weight:800}
+.acc .qt{flex:1}
+.acc .cat{font-size:11px;background:#1f6feb33;color:#79c0ff;border-radius:99px;padding:2px 9px;white-space:nowrap}
+/* плюсик, крутится при открытии */
+.acc .plus{position:relative;width:14px;height:14px;flex:none;transition:transform .3s ease}
+.acc .plus::before,.acc .plus::after{content:'';position:absolute;background:#79c0ff;border-radius:2px}
+.acc .plus::before{left:0;right:0;top:6px;height:2px}
+.acc .plus::after{top:0;bottom:0;left:6px;width:2px}
+.acc.open .plus{transform:rotate(135deg)}
+.acc .body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.acc.open .body{grid-template-rows:1fr}
+.acc .in{overflow:hidden}
+/* врезка ответа */
+.ans{background:#0d1117;border-left:3px solid #1f6feb;border-radius:0 8px 8px 0;margin:0 14px 14px;padding:10px 12px}
+.alab{display:block;font-size:10px;letter-spacing:2px;opacity:.45;margin-bottom:4px}
+.ans p{font-size:14px;opacity:.9}
+@keyframes pop{from{opacity:0;transform:translateY(10px)}}
+.shot .acc{animation:none}
+mark{background:#9e6a03;color:#fff;border-radius:3px;padding:0 2px}
+.empty{opacity:.5;font-size:14px;padding:10px 0}
